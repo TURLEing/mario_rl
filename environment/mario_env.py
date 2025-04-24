@@ -4,7 +4,7 @@
 import gym
 import numpy as np
 from gym import spaces
-from gym_super_mario_bros.actions import SIMPLE_MOVEMENT, COMPLEX_MOVEMENT, RIGHT_ONLY
+from gym_super_mario_bros.actions import SIMPLE_MOVEMENT, COMPLEX_MOVEMENT, RIGHT_ONLY, SIMPLE_RIGHT
 from nes_py.wrappers import JoypadSpace
 from gym_super_mario_bros import SuperMarioBrosEnv
 
@@ -25,9 +25,10 @@ class MarioEnv:
     """
     def __init__(
         self,
-        env_name="SuperMarioBros-v0",
+        env_name="SuperMarioBros",
         world_stage="1-1",
-        movement="simple",
+        world_version="v0",
+        movement="simple_right",
         frame_skip=4,
         frame_stack=4,
         reward_scale=0.1,
@@ -53,7 +54,7 @@ class MarioEnv:
         if world_stage:
             # 指定关卡
             env = gym.make(
-                f"{env_name}-{world_stage}",
+                f"{env_name}-{world_stage}-{world_version}",
                 render_mode=render_mode,
                 apply_api_compatibility=True
             )
@@ -72,6 +73,8 @@ class MarioEnv:
             action_space = COMPLEX_MOVEMENT
         elif movement == "right_only":
             action_space = RIGHT_ONLY
+        elif movement == "simple_right":
+            action_space = SIMPLE_RIGHT
         else:
             raise ValueError(f"Unknown movement type: {movement}")
             

@@ -62,11 +62,11 @@ class PPONetwork(nn.Module):
         features = self.features(x)
         features = features.view(x.size(0), -1)
         
-        # 计算动作概率
+        # 计算动作概率 Actor
         action_logits = self.policy(features)
         action_probs = F.softmax(action_logits, dim=1)
         
-        # 计算状态价值
+        # 计算状态价值 Critic
         state_value = self.value(features)
         
         return action_probs, state_value
