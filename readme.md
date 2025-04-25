@@ -81,7 +81,7 @@ python main.py train --agent ppo --world 1-1 --timesteps 1000000
 ### 使用训练好的模型玩游戏
 
 ```bash
-python main.py play --agent dqn --model checkpoints/best_dqn_model.pt --world 1-1 --no-record
+python main.py play --agent ppo --model checkpoints/best_ppo_model.pt --world 1-1 --no-record
 ```
 
 可选参数：
