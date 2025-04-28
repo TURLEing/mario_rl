@@ -6,7 +6,7 @@ import torch
 # 通用配置
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 ENV_NAME = "SuperMarioBros"
-WORLD_STAGE = "1-1-v0"  # 游戏关卡，格式为"世界-关卡"
+WORLD_STAGE = "1-1"  # 游戏关卡，格式为"世界-关卡"
 RENDER_MODE = "rgb_array"  # 渲染模式，训练时通常为rgb_array
 
 # 环境预处理配置
@@ -18,7 +18,7 @@ RESIZE_SHAPE = (84, 84)  # 图像调整大小
 
 # 训练配置
 TOTAL_TIMESTEPS = 1000000  # 总训练步数
-SAVE_INTERVAL = 50000      # 模型保存间隔
+SAVE_INTERVAL = 100000      # 模型保存间隔
 LOG_INTERVAL = 1000        # 日志记录间隔
 EVAL_INTERVAL = 10000      # 评估间隔
 EVAL_EPISODES = 5          # 每次评估的回合数

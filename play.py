@@ -123,7 +123,7 @@ def main():
     # 加载模型
     print(f"Loading model from: {args.model}")
     
-    checkpoint = torch.load(args.model, map_location=device)
+    checkpoint = torch.load(args.model, map_location=device, weights_only=False)
     
     # 创建智能体并加载模型
     if args.agent == "dqn":

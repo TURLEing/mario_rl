@@ -4,7 +4,7 @@
 import gym
 import numpy as np
 from gym import spaces
-from gym_super_mario_bros.actions import SIMPLE_MOVEMENT, COMPLEX_MOVEMENT, RIGHT_ONLY, SIMPLE_RIGHT
+from gym_super_mario_bros.actions import SIMPLE_MOVEMENT, COMPLEX_MOVEMENT, RIGHT_ONLY
 from nes_py.wrappers import JoypadSpace
 from gym_super_mario_bros import SuperMarioBrosEnv
 
@@ -17,6 +17,12 @@ from utils.wrappers import (
     RewardScaler,
     EpisodeInfo
 )
+
+# Define Simpler Action Space
+SIMPLE_RIGHT = [
+    ['right'],
+    ['right', 'A']
+]
 
 
 class MarioEnv:

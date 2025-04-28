@@ -210,7 +210,7 @@ class DQNAgent:
         Args:
             path: 模型路径
         """
-        checkpoint = torch.load(path)
+        checkpoint = torch.load(path, weights_only=False)
         
         self.policy_net.load_state_dict(checkpoint['policy_net'])
         self.target_net.load_state_dict(checkpoint['target_net'])
