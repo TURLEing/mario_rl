@@ -2,6 +2,8 @@
 
 这是一个使用深度强化学习算法（DQN和PPO）训练智能体玩超级马里奥游戏的项目。项目包含完整的训练框架、可视化工具和评估脚本，目标是训练出能够通关游戏的AI智能体。
 
+*注意：本项目框架基于 Claude 3.7 生成。*
+
 ## 特点
 
 - 支持DQN（Deep Q-Network）和PPO（Proximal Policy Optimization）算法
